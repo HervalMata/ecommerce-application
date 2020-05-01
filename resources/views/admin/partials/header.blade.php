@@ -64,7 +64,7 @@
                     <a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Perfil</a>
                 </li>
                 <li>
-                    <a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Sair</a>
+                    <a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="fa fa-sign-out fa-lg"></i> Sair</a>
                 </li>
             </ui>
         </li>
