@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
@@ -43,10 +43,9 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required|email',
+            'email'   => 'required|email',
             'password' => 'required|min:6'
-            ]);
-
+        ]);
         if (Auth::guard('admin')->attempt([
             'email' => $request->email,
             'password' => $request->password

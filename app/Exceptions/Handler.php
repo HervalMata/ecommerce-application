@@ -70,7 +70,7 @@ class Handler extends ExceptionHandler
             return response()->json(['message' => $exception->getMessage()], 401);
         }
         $guard = Arr::get($exception->guards(), 0);
-        switch ($guard) {
+        switch($guard){
             case 'admin':
                 $login = 'admin.login';
                 break;
