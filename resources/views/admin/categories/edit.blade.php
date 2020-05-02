@@ -76,7 +76,7 @@
                     <div class="tile-footer">
                         <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle">Atualizar Categoria</i> </button>
                         $nbsp;$nbsp;$nbsp;
-                        <a class="btn btn-secondary" href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancelar </a>
+                        <a class="btn btn-secondary" href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Retornar </a>
                     </div>
                 </form>
             </div>

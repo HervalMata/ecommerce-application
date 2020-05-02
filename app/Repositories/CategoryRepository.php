@@ -17,6 +17,9 @@ class CategoryRepository extends BaseRepository implements CategoryContract
 {
     use UploadAble;
 
+    /**
+     * @var Category
+     */
     protected $model;
 
     /**

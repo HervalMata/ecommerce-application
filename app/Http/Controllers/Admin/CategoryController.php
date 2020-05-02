@@ -104,6 +104,10 @@ class CategoryController extends BaseController
         return $this->responseRedirectBack( 'Categoria atualizada com sucesso', 'success', false, false);
     }
 
+    /**
+     * @param $id
+     * @return RedirectResponse
+     */
     public function delete($id)
     {
         $category = $this->categoryRepository->deleteCategory($id);

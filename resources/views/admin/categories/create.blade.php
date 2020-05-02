@@ -24,8 +24,8 @@
                             <textarea class="form-control" rows="4" name="description" id="description">{{ old('description') }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="name">Categoria Parente <span class="m-1-5 text-danger"> *</span> </label>
-                            <select id="parent" class="form-control custom-select mt-15 @error('parent_id') is-invalid @enderror" name="parent_id">
+                            <label class="control-label" for="parent">Categoria Parente <span class="m-1-5 text-danger"> *</span> </label>
+                            <select id="parent" class="form-control custom-select mt-15 @error('parent_id') is-invalid @enderror" name="parent">
                                 <option value="0">Selecione uma categoria parente</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
