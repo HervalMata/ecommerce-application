@@ -58,7 +58,7 @@
             <a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Abrir Perfil"><i class="fa fa-user fa-lg"></i> </a>
             <ui class="dropdown-menu settings-menu dropdown-menu-right">
                 <li>
-                    <a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Configurações</a>
+                    <a class="dropdown-item" href="{{ route('admin.settings') }}"><i class="fa fa-cog fa-lg"></i> Configurações</a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Perfil</a>
