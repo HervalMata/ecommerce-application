@@ -33,7 +33,7 @@ class CategoryController extends BaseController
     public function index()
     {
         $categories = $this->categoryRepository->listCategories();
-        $this->setPageTitle('Categorias', 'Lita de todas as categorias');
+        $this->setPageTitle('Categorias', 'Lista de todas as categorias');
         return view('admin.categories.index', compact('categories'));
     }
 
