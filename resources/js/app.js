@@ -14,3 +14,4 @@ const app = new Vue({
     el: '#app'
 });
 Vue.component('attribute-values', require('./components/AttributeValues.vue').default);
+Vue.component('product-attributes', require('./components/ProductAttributes.vue').default);

@@ -8,33 +8,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
-class Category extends Model
+class Product extends Model
 {
     /**
      * @var string
      */
-    protected $table = 'categories';
+    protected $table = 'products';
 
     /**
      * @var string[]
      */
     protected $fillable = [
-        'name',
-        'slug',
-        'description',
-        'parent_id',
-        'featured',
-        'menu',
-        'image'
+        'brand_id', 'sku', 'name', 'slug', 'description', 'quantity', 'weight', 'price', 'sale_price', 'status', 'featured'
     ];
 
     /**
      * @var string[]
      */
     protected $casts = [
-        'parent_id' => 'integer',
-        'featured' => 'boolean',
-        'menu' => 'boolean'
+        'quantity' => 'integer',
+        'brand_id' => 'integer',
+        'status' => 'integer',
+        'featured' => 'integer',
     ];
 
     /**
@@ -49,17 +44,25 @@ class Category extends Model
     /**
      * @return BelongsTo
      */
-    public function parent()
+    public function brand()
     {
-        return $this->belongsTo(Category::class, 'parent_id');
+        return $this->belongsTo(Brand::class);
     }
 
     /**
      * @return HasMany
      */
-    public function children()
+    public function images()
     {
-        return $this->hasMany(Category::class, 'parent_id');
+        return $this->hasMany(ProductImage::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function attributes()
+    {
+        return $this->hasMany(ProductAttribute::class);
     }
 
     /**
@@ -67,6 +70,6 @@ class Category extends Model
      */
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'product_categories', 'category_id', 'product_id');
+        return $this->belongsToMany(Category::class, 'product_categories', 'product_id', 'category_id');
     }
 }
