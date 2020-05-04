@@ -37,4 +37,10 @@ interface ProductContract
      * @return mixed
      */
     public function deleteProduct(int $id);
+
+    /**
+     * @param $slug
+     * @return mixed
+     */
+    public function findProductBySlug($slug);
 }
