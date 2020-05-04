@@ -37,4 +37,15 @@ interface CategoryContract extends BaseContract
      * @return mixed
      */
     public function deleteCategory(int $id);
+
+    /**
+     * @return mixed
+     */
+    public function treeList();
+
+    /**
+     * @param $slug
+     * @return mixed
+     */
+    public function findBySlug($slug);
 }

@@ -2,6 +2,7 @@
 
 use App\Providers\RepositoryServiceProvider;
 use App\Providers\SettingServiceProvider;
+use App\Providers\ViewComposerServiceProvider;
 
 return [
 
@@ -166,6 +167,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         SettingServiceProvider::class,
         RepositoryServiceProvider::class,
+        ViewComposerServiceProvider::class,
 
         /*
          * Package Service Providers...

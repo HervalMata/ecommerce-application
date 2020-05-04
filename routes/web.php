@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'site.pages.homepage');
 
 Auth::routes();
+
+Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');

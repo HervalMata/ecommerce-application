@@ -8,6 +8,7 @@ use App\Contracts\CategoryContract;
 use App\Models\Category;
 use App\Traits\UploadAble;
 use http\Exception\InvalidArgumentException;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
@@ -112,5 +113,26 @@ class CategoryRepository extends BaseRepository implements CategoryContract
         }
         $category->delete();
         return $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function treeList()
+    {
+        return Category::orderByRaw('-name ASC')
+            ->get()
+            ->nest()
+            ->setIndent('|--')
+            ->listsFlattened('name');
+    }
+
+    /**
+     * @param $slug
+     * @return Builder|Model|mixed|object|null
+     */
+    public function findBySlug($slug)
+    {
+        return Category::with('products')->where('slug', $slug)->where('menu', 1)->first();
     }
 }

@@ -28,11 +28,11 @@
                             <label class="control-label" for="name">Categoria Parente <span class="m-1-5 text-danger"> *</span> </label>
                             <select id="parent" class="form-control custom-select mt-15 @error('parent_id') is-invalid @enderror" name="parent_id">
                                 <option value="0">Selecione uma categoria parente</option>
-                                @foreach($categories as $category)
-                                    @if($targetCategory->parent_id == $category->id)
-                                        <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                @foreach($categories as $key => $category)
+                                    @if($targetCategory->parent_id == $key)
+                                        <option value="{{ $key }}" selected>{{ $category }}</option>
                                     @else
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $key }}">{{ $category }}</option>
                                     @endif
                                 @endforeach
                             </select>

@@ -27,8 +27,8 @@
                             <label class="control-label" for="parent">Categoria Parente <span class="m-1-5 text-danger"> *</span> </label>
                             <select id="parent" class="form-control custom-select mt-15 @error('parent_id') is-invalid @enderror" name="parent">
                                 <option value="0">Selecione uma categoria parente</option>
-                                @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @foreach($categories as $key => $category)
+                                    <option value="{{ $key }}">{{ $category }}</option>
                                 @endforeach
                             </select>
                             @error('parent_id') {{ $message }} @enderror
