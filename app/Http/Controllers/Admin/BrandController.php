@@ -42,9 +42,8 @@ class BrandController extends BaseController
      */
     public function create()
     {
-        $brands = $this->brandRepository->listBrands('id', 'asc');
         $this->setPageTitle('Marcas', 'Criar uma marca');
-        return view('admin.brands.create', compact('brands'));
+        return view('admin.brands.create');
     }
 
     /**

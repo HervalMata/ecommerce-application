@@ -61,8 +61,8 @@ class ProductController extends BaseController
      */
     public function create()
     {
-        $brands = $this->brandRepository->listBrands('name', 'asc');
-        $categories = $this->categoryRepository->listCategories('name', 'asc');
+        $brands = $this->brandRepository->listBrands('name');
+        $categories = $this->categoryRepository->listCategories('name');
         $this->setPageTitle('Produtos', 'Criar um produto');
         return view('admin.products.create', compact('categories', 'brands'));
     }

@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Site;
 use App\Contracts\AttributeContract;
 use App\Contracts\ProductContract;
 use App\Http\Controllers\Controller;
+use Darryldecode\Cart\Cart;
+use Darryldecode\Cart\Exceptions\InvalidItemException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -44,8 +47,17 @@ class ProductController extends Controller
         return view('site.pages.product', compact('product', 'attributes'));
     }
 
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     * @throws InvalidItemException
+     */
     public function addToCart(Request $request)
     {
-        dd($request->all());
+        $product = $this->productRepository->findProductById($request->input('productId'));
+        $options = $request->except('_token', 'productId', 'price', 'qty');
+
+        Cart::add(uniqid(), $product->name, $request->input('price'), $request->input('qty'), $options);
+        return redirect()->back()->with('message', 'Item adicionado ao carrinho com sucesso!');
     }
 }

@@ -42,9 +42,8 @@ class AttributeController extends BaseController
      */
     public function create()
     {
-        $categories = $this->attributeRepository->listAttributes('id', 'asc');
         $this->setPageTitle('Atributos', 'Criar um atributo');
-        return view('admin.attributes.create', compact('attributes'));
+        return view('admin.attributes.create');
     }
 
     /**

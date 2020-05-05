@@ -29,7 +29,7 @@
                                     <i class="fa fa-shopping-cart"></i>
                                 </div>
                                 <div class="text-wrap">
-                                    <small>3 itens</small>
+                                    <small>{{ $cartCount }} itens</small>
                                 </div>
                             </a>
                         </div>
