@@ -86,7 +86,7 @@
                             <br> LOrem ipsum dolor
                         </div>
                     </figure>
-                    <a href="#" class="btn btn-success btn-lg btn-block">Continuar para Pagamento</a>
+                    <a href="{{ route('checkout.index') }}" class="btn btn-success btn-lg btn-block">Continuar para Pagamento</a>
                 </aside>
             </div>
         </div>
