@@ -43,6 +43,12 @@
                 <span class="app-menu__label">Produtos</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" {{ Route::currentRouteName() == 'admin.orders.index' ? 'active' : '' }} href="{{ route('admin.orders.index') }}">
+                <i class="app-menu__icon fa fa-bar-chart"></i>
+                <span class="app-menu__label">Ordens</span>
+            </a>
+        </li>
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i>
                 <span class="app-menu__label">Usuários</span>

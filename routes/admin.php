@@ -72,5 +72,11 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/update', 'Admin\ProductController@update')->name('admin.products.update');
             Route::get('/{id}/delete', 'Admin\ProductController@delete')->name('admin.products.delete');
         });
+
+        # Orders routes
+        Route::group(['prefix' => 'orders'], function () {
+            Route::get('/', 'Admin\OrrderController@index')->name('admin.orders.index');
+            Route::get('/{order}/show', 'Admin\OrrderController@show')->name('admin.orders.show');
+        });
     });
 });
